@@ -1,0 +1,28 @@
+[project]
+name = "kairo"
+version = "0.1.0"
+description = "Kairo V1 backend"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.116.0",
+  "uvicorn>=0.35.0",
+  "sqlalchemy>=2.0.40",
+  "pydantic>=2.11.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.0",
+  "httpx>=0.28.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[project.scripts]
+kairo-api = "kairo.api.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
